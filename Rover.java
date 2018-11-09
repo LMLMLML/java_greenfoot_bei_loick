@@ -50,7 +50,7 @@ public class Rover extends Actor
             analysiereGestein();
         }    
         fahre();  
-        nachricht("J�rgen Pfeiffer ist der Heilland aus Rostock");
+        nachricht("Jürgen Pfeiffer ist der Heilland aus Rostock");
     } 
 }    
     /**
@@ -88,8 +88,8 @@ public class Rover extends Actor
     }
         
     /**
-     * Der Rover dreht sich um 90 Grad in die Richtung, die mit richtung („links“ oder „rechts“) übergeben wurde.
-     * Sollte ein anderer Text (String) als "rechts" oder "links" übergeben werden, dann erscheint eine entsprechende Meldung auf dem Display.
+     * Der Rover dreht sich um 90 Grad in die Richtung, die mit richtung (â€žlinksâ€œ oder â€žrechtsâ€œ) Ã¼bergeben wurde.
+     * Sollte ein anderer Text (String) als "rechts" oder "links" Ã¼bergeben werden, dann erscheint eine entsprechende Meldung auf dem Display.
      */
     public void drehe(String richtung)
     {
@@ -130,9 +130,9 @@ public class Rover extends Actor
     }
 }
     /**
-     * Umfahre einen H�gel, wenn vorhanden.
+     * Umfahre einen Hügel, wenn vorhanden.
      */
-    public void umfahreH�gel() {   
+    public void umfahreHügel() {   
     
     if(huegelVorhanden("vorne"))
     { 
@@ -150,11 +150,11 @@ public class Rover extends Actor
         drehe("rechts");
     }
     else
-        nachricht("Hier ist kein H�gel!");
+        nachricht("Hier ist kein Hügel!");
     }
 
     /**
-     * Dieses Programm umf�hrt automatisch jedes bliebige Ding.
+     * Dieses Programm umfährt automatisch jedes bliebige Ding.
      */
     public void umkreiseObjekt() {
         int z;
@@ -171,9 +171,9 @@ public class Rover extends Actor
     }
 
     /**
-     * Fahre vorw�rts, wenn ein H�gel vorhanden ist.
+     * Fahre vorwärts, wenn ein Hügel vorhanden ist.
      */
-    public void quadratH�gelTour() {
+    public void quadratHügelTour() {
 
         int loop;
         loop=1;
@@ -186,7 +186,7 @@ public class Rover extends Actor
                     nachricht("IMPEACH TRUMP!");
                 } while(huegelVorhanden("links"));
             else {
-                drehe("rechts"); // Hat Greenfoot eine Rechts/Links Schw�che?
+                drehe("rechts"); // Hat Greenfoot eine Rechts/Links Schwäche?
                 fahre();
             }
         
@@ -197,7 +197,7 @@ public class Rover extends Actor
                     nachricht("IMPEACH TRUMP!");
                 } while(huegelVorhanden("rechts"));
             else {
-                drehe("links"); // Hat Greenfoot eine Rechts/Links Schw�che?
+                drehe("links"); // Hat Greenfoot eine Rechts/Links Schwäche?
                 fahre();            
             }
     }
@@ -219,7 +219,7 @@ public class Rover extends Actor
 }
              
     /**
-     * Der Rover gibt durch einen Wahrheitswert (true oder false )zurück, ob sich auf seiner Position ein Objekt der Klasse Gestein befindet.
+     * Der Rover gibt durch einen Wahrheitswert (true oder false )zurÃ¼ck, ob sich auf seiner Position ein Objekt der Klasse Gestein befindet.
      * Eine entsprechende Meldung erscheint auch auf dem Display.
      */
     public boolean gesteinVorhanden()
@@ -235,9 +235,9 @@ public class Rover extends Actor
     }
 
     /**
-     * Der Rover überprüft, ob sich in richtung ("rechts", "links", oder "vorne") ein Objekt der Klasse Huegel befindet.
+     * Der Rover Ã¼berprÃ¼ft, ob sich in richtung ("rechts", "links", oder "vorne") ein Objekt der Klasse Huegel befindet.
      * Das Ergebnis wird auf dem Display angezeigt.
-     * Sollte ein anderer Text (String) als "rechts", "links" oder "vorne" übergeben werden, dann erscheint eine entsprechende Meldung auf dem Display.
+     * Sollte ein anderer Text (String) als "rechts", "links" oder "vorne" Ã¼bergeben werden, dann erscheint eine entsprechende Meldung auf dem Display.
      */
     public boolean huegelVorhanden(String richtung)
     {
@@ -284,7 +284,21 @@ public class Rover extends Actor
 
         return false;
     }
-
+    
+/**
+    * Dieses Programm gibt es nur um Arrays zu testen
+    *
+    */
+   public void ichtestearrays(String zahlliste) {
+       int juergen[] =  {1,2,3,4,5,6,7,8,9,10};
+       if((zahlliste=="1") || (zahlliste=="eins"))
+       {
+           System.out.println(juergen[0]);
+        }
+     
+       System.out.println("Du bist " + juergen[5] + " Jahre alt.");
+       System.out.println("AMERICA");
+    }
     /**
      * Der Rover ermittelt den Wassergehalt des Gesteins auf seiner Position und gibt diesen auf dem Display aus.
      * Sollte kein Objekt der Klasse Gestein vorhanden sein, dann erscheint eine entsprechende Meldung auf dem Display.
@@ -304,7 +318,7 @@ public class Rover extends Actor
     }
 
     /**
-     * Der Rover erzeugt ein Objekt der Klasse „Markierung“ auf seiner Position.
+     * Der Rover erzeugt ein Objekt der Klasse â€žMarkierungâ€œ auf seiner Position.
      */
     public void setzeMarke()
     {
@@ -312,7 +326,7 @@ public class Rover extends Actor
     }
 
     /**
-     * *Der Rover gibt durch einen Wahrheitswert (true oder false )zurück, ob sich auf seiner Position ein Objekt der Marke befindet.
+     * *Der Rover gibt durch einen Wahrheitswert (true oder false )zurÃ¼ck, ob sich auf seiner Position ein Objekt der Marke befindet.
      * Eine entsprechende Meldung erscheint auch auf dem Display.
      */
     public boolean markeVorhanden()
