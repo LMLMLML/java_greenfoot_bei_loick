@@ -300,6 +300,19 @@ public class Rover extends Actor
        System.out.println("AMERICA");
     }
     /**
+  * Dieses Programm umfährt das Qadrat, bis die Marke vorhanden ist
+  */
+ public void macheaufgabe(){
+ while(!markeVorhanden()) {
+ fahre();
+ if(!huegelVorhanden("rechts")) {
+ drehe("rechts");
+  fahre();
+}
+ 
+}
+}
+    /**
      * Der Rover ermittelt den Wassergehalt des Gesteins auf seiner Position und gibt diesen auf dem Display aus.
      * Sollte kein Objekt der Klasse Gestein vorhanden sein, dann erscheint eine entsprechende Meldung auf dem Display.
      */
