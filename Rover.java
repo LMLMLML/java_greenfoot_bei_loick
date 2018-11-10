@@ -34,6 +34,13 @@ public class Rover extends Actor
             setRotation(getRotation()+180);
         }                   
     }
+    
+ /**
+ * Dieses Programm gibt einen Text aus
+ */
+public void woitkowski(String name) {
+    System.out.println("Hallo, " + name + ". Ich hoffe es geht dir gut. Sag mal bald dein Alter.");
+}
     /**
      * Fahre durch das Labyrinth
      */          
