@@ -317,7 +317,46 @@ public void woitkowski(String name) {
        System.out.println("Du bist " + juergen[5] + " Jahre alt.");
        System.out.println("AMERICA");
     }
+    /**
+    * Dieses Programm gibt es nur um Arrays zu testen
+    *
+    */
+   public void ichtestearrays(int alter) {
+       int juergen[] =  {1,2,3,4,5,6,7,8,9,10};
+       if(alter ==1)
+       {
+           System.out.println(juergen[0]);
+       
+        }
+        if(alter==2) 
+       {
+           System.out.println(juergen[1]);
+        }
+     if(alter==3) 
+       {
+           System.out.println(juergen[2]);
+        }
+        if(alter==4) 
+       {
+           System.out.println(juergen[3]);
+        }
+       System.out.println("Du bist " + juergen[5] + " Jahre alt.");
+       System.out.println("AMERICA");
+    }
     
+    
+    /**
+ * Seite 59 NR2 c
+ */   
+public void aufgabeseite59(){
+    while(!markeVorhanden()){
+        if((huegelVorhanden("rechts") && (huegelVorhanden("links") && (!gesteinVorhanden()))))
+        {setzeMarke();
+           fahre();
+        }
+        else
+        {fahre();
+        }}}
     /**
   * Dieses Programm umfährt das Qadrat, bis die Marke vorhanden ist
   */
