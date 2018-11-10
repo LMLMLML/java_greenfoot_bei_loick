@@ -295,10 +295,22 @@ public class Rover extends Actor
        {
            System.out.println(juergen[0]);
         }
-     
+        if((zahlliste=="2") || (zahlliste=="zwei"))
+       {
+           System.out.println(juergen[1]);
+        }
+       if((zahlliste=="3") || (zahlliste=="drei"))
+       {
+           System.out.println(juergen[2]);
+        }
+        if((zahlliste=="4") || (zahlliste=="vier"))
+       {
+           System.out.println(juergen[3]);
+        }
        System.out.println("Du bist " + juergen[5] + " Jahre alt.");
        System.out.println("AMERICA");
     }
+    
     /**
   * Dieses Programm umfährt das Qadrat, bis die Marke vorhanden ist
   */
