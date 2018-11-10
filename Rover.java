@@ -35,6 +35,27 @@ public class Rover extends Actor
         }                   
     }
     
+    /**
+ * 
+ */
+public void zaehlschleifen()
+{ for (int i = 0; i < 4; i++) {
+    fahre();
+    nachricht("Jürgen Pfeiffer");
+    
+    
+}
+}
+public void computerabsturz() {
+for (int i = 0; i < 10; i--)
+System.out.println(i);
+}
+public void computerabturzmitlimit(){
+    for (int i = 0; i >-1000000; i--)
+    { 
+        System.out.println("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
+    }
+}
  /**
  * Dieses Programm gibt einen Text aus
  */
