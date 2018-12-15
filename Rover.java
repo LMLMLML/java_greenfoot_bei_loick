@@ -59,9 +59,57 @@ public void computerabturzmitlimit(){
  /**
  * Dieses Programm gibt einen Text aus
  */
-public void woitkowski(String name) {
-    System.out.println("Hallo, " + name + ". Ich hoffe es geht dir gut. Sag mal bald dein Alter.");
+ 
+     
+    public void macheaufgabe(){
+ while(!markeVorhanden()) {
+ fahre();
+ if(!huegelVorhanden("rechts")) {
+ drehe("rechts");
+  fahre();
 }
+}}
+/**
+*Dieses Programm soll ein Fdeld ausfüllen und alle abgefahrenden Felder mit einer Marke versehen, funktioniert leider nicht
+*/
+public void abc() {
+drehe("links");setzeMarke();int a=0;
+
+while(huegelVorhanden("links")){fahre();setzeMarke();a++;}
+
+entferneMarke();drehe("rechts");drehe("rechts");fahre();drehe("links");int b=0;
+
+while(!huegelVorhanden("vorne")){fahre();setzeMarke();b++;}
+
+int d=0;drehe("rechts");
+System.out.println(a);
+
+for(int g=1; g<a;g++){fahre();setzeMarke();}
+
+drehe("rechts"); drehe("rechts");
+
+for(int g=1; g<a;g++){fahre();}
+
+drehe("rechts");
+
+
+for (int c =1;c<a;c++){
+    
+if ((c%2) == 0) { drehe("links"); fahre(); setzeMarke(); drehe("links");}
+else {drehe("rechts"); fahre(); setzeMarke(); drehe("rechts");}
+
+for(int x=0; x<b; x++){fahre();setzeMarke();d++;}
+
+int e= ((d/c)-1);
+
+if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts"); fahre(); drehe("rechts"); fahre(); drehe("links");}
+}}
+ public void woitkowski(String name) {
+    System.out.println("Hallo, " + name + ". Ich hoffe es geht dir gut. Sag mal bald dein Alter."
+}
+
+
+
     /**
      * Fahre durch das Labyrinth
      */          
@@ -182,7 +230,7 @@ public void woitkowski(String name) {
     }
 
     /**
-     * Dieses Programm umfährt automatisch jedes bliebige Ding.
+     * Dieses Programm umfährt automatisch ein Qadrat
      */
     public void umkreiseObjekt() {
         int z;
