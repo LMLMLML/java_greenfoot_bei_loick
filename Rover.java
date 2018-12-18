@@ -3,8 +3,48 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Rover extends Actor
 {
     private Display anzeige;
+    private int  Anzahl_an_gefahrenden_Feldern =0;
 
-    public void act() 
+public void act() 
+    {
+
+    }
+/**
+     * Der Rover bewegt sich ein Feld in Fahrtrichtung weiter.
+     * Sollte sich in Fahrtrichtung ein Objekt der Klasse Huegel befinden oder er sich an der Grenze der Welt befinden,
+     * dann erscheint eine entsprechende Meldung auf dem Display.
+     */
+    public void fahre()
+    {
+        int posX = getX();
+        int posY = getY();
+
+        if(huegelVorhanden("vorne"))
+        {
+            nachricht("Es geht nicht weiter!! ");
+        }
+        else if(getRotation()==270 && getY()==1)
+        {
+            nachricht("Ich kann mich nicht bewegen.");
+        }
+        else
+        {
+            move(1);
+            Anzahl_an_gefahrenden_Feldern++;
+            System.out.println("Bewegung hat stattgefunden.");
+            System.out.println("X Position: "+posX);
+            System.out.println("Y Position: " +posY);
+            System.out.println("Anzahl an gefahrenen Feldern " + Anzahl_an_gefahrenden_Feldern);
+            Greenfoot.delay(1);
+        }
+
+        if(posX==getX()&&posY==getY()&&!huegelVorhanden("vorne"))
+        {
+            nachricht("Ich kann mich nicht bewegen");
+        }
+    }
+    public void z() { for (int a=0; a <=10; a++) {fahre(); fahre(); fahre(); fahre(); fahre(); fahre();drehe("rechts");drehe("rechts");}}
+   
     {
         aufgabe3();
     } 
@@ -129,35 +169,7 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
         nachricht("Jürgen Pfeiffer ist der Heilland aus Rostock");
     } 
 }    
-    /**
-     * Der Rover bewegt sich ein Feld in Fahrtrichtung weiter.
-     * Sollte sich in Fahrtrichtung ein Objekt der Klasse Huegel befinden oder er sich an der Grenze der Welt befinden,
-     * dann erscheint eine entsprechende Meldung auf dem Display.
-     */
-    public void fahre()
-    {
-        int posX = getX();
-        int posY = getY();
-
-        if(huegelVorhanden("vorne"))
-        {
-            nachricht("Zu steil!");
-        }
-        else if(getRotation()==270 && getY()==1)
-        {
-            nachricht("Ich kann mich nicht bewegen");
-        }
-        else
-        {
-            move(1);
-            Greenfoot.delay(1);
-        }
-
-        if(posX==getX()&&posY==getY()&&!huegelVorhanden("vorne"))
-        {
-            nachricht("Ich kann mich nicht bewegen");
-        }
-    }
+  
     
     public void burnOut() {
         setRotation(getRotation()+180);
