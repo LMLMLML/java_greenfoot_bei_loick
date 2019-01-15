@@ -2,20 +2,47 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Rover extends Actor
 {
-    private Display anzeige;
-    private int  Anzahl_an_gefahrenden_Feldern =0;
-
+private Display anzeige;
+private int  Anzahl_an_gefahrenden_Feldern =0;
+private double energy=100;
+   
+    
 public void act() 
     {
-
     }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
      * Der Rover bewegt sich ein Feld in Fahrtrichtung weiter.
      * Sollte sich in Fahrtrichtung ein Objekt der Klasse Huegel befinden oder er sich an der Grenze der Welt befinden,
      * dann erscheint eine entsprechende Meldung auf dem Display.
      */
-    public void fahre()
-    {
+     
+public void fahre()
+   { if (energy >=2) {
         int posX = getX();
         int posY = getY();
 
@@ -30,24 +57,249 @@ public void act()
         else
         {
             move(1);
-            Anzahl_an_gefahrenden_Feldern++;
-            System.out.println("Bewegung hat stattgefunden.");
+         Anzahl_an_gefahrenden_Feldern++;
+           System.out.println("Bewegung hat stattgefunden.");
             System.out.println("X Position: "+posX);
             System.out.println("Y Position: " +posY);
             System.out.println("Anzahl an gefahrenen Feldern " + Anzahl_an_gefahrenden_Feldern);
             Greenfoot.delay(1);
-        }
+            energy--;
+        if(energy <= 10) {
+                nachricht("Low battery power");
+            }   
+        }   
 
         if(posX==getX()&&posY==getY()&&!huegelVorhanden("vorne"))
         {
             nachricht("Ich kann mich nicht bewegen");
         }
     }
+    else
+    {nachricht("No action due to unsufficient battery power!");
+}
+}
+/**
+ * Dieser Befehl lädt die Energie auf!
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ */
+public void chargingStation() {
+    double x;
+    x=100-energy;
+    if(energy>=100) { 
+        nachricht("no charging");
+    }        
+    else
+    {        
+    energy=energy+x;nachricht("fully charged");
+    }
+        
+}    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public void reducebatterypower(){double z; z= energy-12; energy=energy-z;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public double gasStation(double pAmount) {
+    if(energy < 100) {
+    energy=energy+pAmount;
+    nachricht("Battery has been charged successfully");
+    return pAmount;
+    }
+    return pAmount;
+}    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+/**
+     * Der Rover dreht sich um 90 Grad in die Richtung, die mit richtung (Ã¢â‚¬Å¾linksÃ¢â‚¬Å“ oder Ã¢â‚¬Å¾rechtsÃ¢â‚¬Å“) ÃƒÂ¼bergeben wurde.
+     * Sollte ein anderer Text (String) als "rechts" oder "links" ÃƒÂ¼bergeben werden, dann erscheint eine entsprechende Meldung auf dem Display.
+     */
+    public void drehe(String richtung)
+    {if (energy >=2) {
+        if(energy <= 10) {
+                nachricht("Low battery power");
+            }   
+        if(richtung=="rechts")
+        {
+            setRotation(getRotation()+90);
+            energy=energy-0.5;
+        }
+        else if (richtung=="links")
+        {
+            setRotation(getRotation()-90);
+            energy=energy-0.5;
+        }
+        else
+        {
+            nachricht("Befehl nicht korrekt!");
+        }
+    }
+}
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void z() { for (int a=0; a <=10; a++) {fahre(); fahre(); fahre(); fahre(); fahre(); fahre();drehe("rechts");drehe("rechts");}}
    
     {
         aufgabe3();
     } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
    /**
      * Dieser Algorithmus funktioniert nur mit der exakten Abbildung aus dem Buch! (siehe S.50)
@@ -78,10 +330,62 @@ public void act()
     /**
  * 
  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public void zaehlschleifen()
 { for (int i = 0; i < 4; i++) {
     fahre();
     nachricht("Jürgen Pfeiffer");
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }
@@ -90,6 +394,46 @@ public void computerabsturz() {
 for (int i = 0; i < 10; i--)
 System.out.println(i);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public void computerabturzmitlimit(){
     for (int i = 0; i >-1000000; i--)
     { 
@@ -100,6 +444,48 @@ public void computerabturzmitlimit(){
  * Dieses Programm gibt einen Text aus
  */
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      
     public void macheaufgabe(){
  while(!markeVorhanden()) {
@@ -112,6 +498,43 @@ public void computerabturzmitlimit(){
 /**
 *Dieses Programm soll ein Fdeld ausfüllen und alle abgefahrenden Felder mit einer Marke versehen, funktioniert leider nicht
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public void abc() {
 drehe("links");setzeMarke();int a=0;
 
@@ -144,11 +567,60 @@ int e= ((d/c)-1);
 
 if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts"); fahre(); drehe("rechts"); fahre(); drehe("links");}
 }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  public void woitkowski(String name) {
     System.out.println("Hallo, " + name + ". Ich hoffe es geht dir gut. Sag mal bald dein Alter."
 }
 
 
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+         
+                       
+                       
+                       
+                       
+                       
+                       
 
     /**
      * Fahre durch das Labyrinth
@@ -170,6 +642,30 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
     } 
 }    
   
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+              
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     
     public void burnOut() {
         setRotation(getRotation()+180);
@@ -179,6 +675,32 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
      * Der Rover dreht sich um 90 Grad in die Richtung, die mit richtung (â€žlinksâ€œ oder â€žrechtsâ€œ) Ã¼bergeben wurde.
      * Sollte ein anderer Text (String) als "rechts" oder "links" Ã¼bergeben werden, dann erscheint eine entsprechende Meldung auf dem Display.
      */
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+               
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     public void drehe(String richtung)
     {
         if(richtung=="rechts")
@@ -195,6 +717,42 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
         }
     }
 
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+           
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     /** 
      * Fahre endlos lange im Quadrat, bis das Programm geschlossen wird.
      */
@@ -217,6 +775,31 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
         drehe("rechts");
     }
 }
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+          
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     /**
      * Umfahre einen Hügel, wenn vorhanden.
      */
@@ -240,6 +823,27 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
     else
         nachricht("Hier ist kein Hügel!");
     }
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
 
     /**
      * Dieses Programm umfährt automatisch ein Qadrat
@@ -258,6 +862,27 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
         }
     }
 
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                      
     /**
      * Fahre vorwärts, wenn ein Hügel vorhanden ist.
      */
@@ -295,6 +920,23 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
      * Fahre eine Spirale
      */   
     
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     public void Spirale() {
         for(int y=0;y<40;y++) {
             for(int x=0;x<y;x++) {
@@ -310,6 +952,27 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
      * Der Rover gibt durch einen Wahrheitswert (true oder false )zurÃ¼ck, ob sich auf seiner Position ein Objekt der Klasse Gestein befindet.
      * Eine entsprechende Meldung erscheint auch auf dem Display.
      */
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     public boolean gesteinVorhanden()
     {
         if(getOneIntersectingObject(Gestein.class)!=null)
@@ -327,6 +990,23 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
      * Das Ergebnis wird auf dem Display angezeigt.
      * Sollte ein anderer Text (String) als "rechts", "links" oder "vorne" Ã¼bergeben werden, dann erscheint eine entsprechende Meldung auf dem Display.
      */
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     public boolean huegelVorhanden(String richtung)
     {
         int rot = getRotation();
@@ -377,6 +1057,34 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
     * Dieses Programm gibt es nur um Arrays zu testen
     *
     */
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
    public void ichtestearrays(String zahlliste) {
        int juergen[] =  {1,2,3,4,5,6,7,8,9,10};
        if((zahlliste=="1") || (zahlliste=="eins"))
@@ -402,6 +1110,31 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
     * Dieses Programm gibt es nur um Arrays zu testen
     *
     */
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
    public void ichtestearrays(int alter) {
        int juergen[] =  {1,2,3,4,5,6,7,8,9,10};
        if(alter ==1)
@@ -425,6 +1158,27 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
        System.out.println("AMERICA");
     }
     
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     
     /**
  * Seite 59 NR2 c
@@ -455,6 +1209,29 @@ public void aufgabeseite59(){
      * Der Rover ermittelt den Wassergehalt des Gesteins auf seiner Position und gibt diesen auf dem Display aus.
      * Sollte kein Objekt der Klasse Gestein vorhanden sein, dann erscheint eine entsprechende Meldung auf dem Display.
      */
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     public void analysiereGestein()
     {
         if(gesteinVorhanden())
@@ -472,6 +1249,29 @@ public void aufgabeseite59(){
     /**
      * Der Rover erzeugt ein Objekt der Klasse â€žMarkierungâ€œ auf seiner Position.
      */
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     public void setzeMarke()
     {
         getWorld().addObject(new Marke(), getX(), getY());
@@ -491,6 +1291,27 @@ public void aufgabeseite59(){
         return false;
     }
 
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     public void entferneMarke()
     {
         if(markeVorhanden())
@@ -499,6 +1320,22 @@ public void aufgabeseite59(){
         }
     }
 
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     private void nachricht(String pText)
     {
         if(anzeige!=null)
@@ -509,12 +1346,64 @@ public void aufgabeseite59(){
         }
     }
 
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     private void displayAusschalten()
     {
         getWorld().removeObject(anzeige);
 
     }
 
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     protected void addedToWorld(World world)
     {
 
@@ -527,8 +1416,7 @@ public void aufgabeseite59(){
         {
             setLocation(getX(),1);
         }
-        anzeige.anzeigen("Ich bin bereit");
-
+        anzeige.anzeigen("Ich bin unnötig");
     }
 
     class Display extends Actor
@@ -540,10 +1428,50 @@ public void aufgabeseite59(){
           bild = getImage();
         }
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         public void act() 
         {
 
         }  
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         public void anzeigen(String pText)
         {
@@ -552,6 +1480,39 @@ public void aufgabeseite59(){
 
         }
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         public void loeschen()
         {
             getImage().clear();
