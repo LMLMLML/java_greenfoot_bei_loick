@@ -78,37 +78,34 @@ public void fahre()
     {nachricht("No action due to unsufficient battery power!");
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Dieser Befehl lädt die Energie auf!
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ **/
 
- */
 public void chargingStation() {
     double x;
     x=100-energy;
@@ -152,14 +149,10 @@ public void chargingStation() {
 
 
 
-
-
-
-public void reducebatterypower(){double z; z= energy-12; energy=energy-z;}
-
-
-
-
+/**
+*Dieser Befehl reduziert die Akkuleistung energy auf 12!
+**/
+public void reducebatterypower(){double z; z= energy-12; energy=energy-z;} 
 
 
 
@@ -184,6 +177,14 @@ public void reducebatterypower(){double z; z= energy-12; energy=energy-z;}
 
 
 
+
+
+
+
+/**
+*Dieser Befehl öffnet ein Eingabefenster, bei dem man eingeben kann, um wie viele Einheiten man den Akku aufladen will(auch Kommazahlen).
+*Es geht nur bis maximal 100 
+*/
 
 public double gasStation(double pAmount) {
     if(energy < 100) {
@@ -268,6 +269,9 @@ public double gasStation(double pAmount) {
 
 
 
+/**
+*Dieses Programm ist nur dafür gedacht, den Akku lehrzubekommen. Der Rover fährt zehn mal hin und her
+**/
 
 
     public void z() { for (int a=0; a <=10; a++) {fahre(); fahre(); fahre(); fahre(); fahre(); fahre();drehe("rechts");drehe("rechts");}}
@@ -349,7 +353,9 @@ public double gasStation(double pAmount) {
 
 
 
-
+/**
+*Dieser Befehl fährt viermal und gibt die Nachricht Jürgen Pfeiffer aus!
+**/
 
 public void zaehlschleifen()
 { for (int i = 0; i < 4; i++) {
@@ -387,7 +393,9 @@ public void zaehlschleifen()
     
     
     
-    
+  /**
+* Dieses Programm gibt unendlich lange den Buchstaben i untereinander aus. Es öffnet sich ein Fenster. Solange, bis der Computer abstürtzt
+**/
 }
 }
 public void computerabsturz() {
@@ -432,7 +440,9 @@ System.out.println(i);
 
 
 
-
+/**
+*Dieses Programm gibt in einem neuen Fenster 1 Millionen Mal den Buchstaben r untereinander aus. Bis der Computer abstürzt. Nicht machen!
+**/
 
 public void computerabturzmitlimit(){
     for (int i = 0; i >-1000000; i--)
@@ -440,53 +450,34 @@ public void computerabturzmitlimit(){
         System.out.println("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  /**
- * Dieses Programm gibt einen Text aus
- */
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
+ * Dieses Programm fährt solange keine Marke vorhanden ist. Wenn rechts Hügel vorhanden dann rechts drehen und fahren!
+ */    
     public void macheaufgabe(){
  while(!markeVorhanden()) {
  fahre();
@@ -495,45 +486,36 @@ public void computerabturzmitlimit(){
   fahre();
 }
 }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
-*Dieses Programm soll ein Fdeld ausfüllen und alle abgefahrenden Felder mit einer Marke versehen, funktioniert leider nicht
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*Dieses Programm soll ein Feld, das rechts und links abgegrenzt ist und nach oben und unten nicht, befahren, und
+*zwar jedes einzelne Kästchen. Das funktioniert. Eigentlich soll das Programm auch Hindernisse innerhalb des Feldes abfahren;
+*funktioniert aber nicht
+*//
 
 public void abc() {
 drehe("links");setzeMarke();int a=0;
@@ -596,7 +578,9 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
 
 
 
-
+/**
+*Bei diesem Programm kann man in einem Fenster einen Namen eingeben und das Programm gibt einen in einem neuen Fenster eine tolle Nachricht aus
+**/
  public void woitkowski(String name) {
     System.out.println("Hallo, " + name + ". Ich hoffe es geht dir gut. Sag mal bald dein Alter."
 }
@@ -918,24 +902,7 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
     
     /**
      * Fahre eine Spirale
-     */   
-    
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
+     */                     
                        
     public void Spirale() {
         for(int y=0;y<40;y++) {
@@ -947,31 +914,29 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
         drehe("rechts");
     }
 }
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
              
     /**
      * Der Rover gibt durch einen Wahrheitswert (true oder false )zurÃ¼ck, ob sich auf seiner Position ein Objekt der Klasse Gestein befindet.
      * Eine entsprechende Meldung erscheint auch auf dem Display.
      */
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
                        
     public boolean gesteinVorhanden()
     {
@@ -985,27 +950,28 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
         return false;
     }
 
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     /**
      * Der Rover Ã¼berprÃ¼ft, ob sich in richtung ("rechts", "links", oder "vorne") ein Objekt der Klasse Huegel befindet.
      * Das Ergebnis wird auf dem Display angezeigt.
      * Sollte ein anderer Text (String) als "rechts", "links" oder "vorne" Ã¼bergeben werden, dann erscheint eine entsprechende Meldung auf dem Display.
      */
                        
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
+                 
                        
     public boolean huegelVorhanden(String richtung)
     {
@@ -1054,37 +1020,9 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
     }
     
 /**
-    * Dieses Programm gibt es nur um Arrays zu testen
-    *
+    * Dieses Programm gibt es nur um Arrays zu testen. Mit der Zahlenliste wird diverses gemacht
     */
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
+                  
    public void ichtestearrays(String zahlliste) {
        int juergen[] =  {1,2,3,4,5,6,7,8,9,10};
        if((zahlliste=="1") || (zahlliste=="eins"))
@@ -1106,34 +1044,32 @@ if((huegelVorhanden("vorne")) &&(e<b) && (!markeVorhanden())) { drehe("rechts");
        System.out.println("Du bist " + juergen[5] + " Jahre alt.");
        System.out.println("AMERICA");
     }
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     /**
     * Dieses Programm gibt es nur um Arrays zu testen
     *
     */
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
+                     
                        
    public void ichtestearrays(int alter) {
        int juergen[] =  {1,2,3,4,5,6,7,8,9,10};
@@ -1192,6 +1128,24 @@ public void aufgabeseite59(){
         else
         {fahre();
         }}}
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     /**
   * Dieses Programm umfährt das Qadrat, bis die Marke vorhanden ist
   */
@@ -1205,32 +1159,38 @@ public void aufgabeseite59(){
  
 }
 }
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
     /**
      * Der Rover ermittelt den Wassergehalt des Gesteins auf seiner Position und gibt diesen auf dem Display aus.
      * Sollte kein Objekt der Klasse Gestein vorhanden sein, dann erscheint eine entsprechende Meldung auf dem Display.
      */
                        
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
+                   
                        
     public void analysiereGestein()
     {
