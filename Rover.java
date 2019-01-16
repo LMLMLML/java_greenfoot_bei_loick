@@ -5,10 +5,35 @@ public class Rover extends Actor
 private Display anzeige;
 private int  Anzahl_an_gefahrenden_Feldern =0;
 private double energy=100;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    
     
-public void act() 
-    {
+public void act() {
+    
+     if(Greenfoot.isKeyDown("Right"))  { setRotation(getRotation()+90);}
+            if(Greenfoot.isKeyDown("Left")){ setRotation(getRotation()-90);}
+            if(Greenfoot.isKeyDown("Up")){move(1);}
+            if(Greenfoot.isKeyDown("Down")){move(-1);}
+
     }
     
 
@@ -78,6 +103,87 @@ public void fahre()
     {nachricht("No action due to unsufficient battery power!");
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public void fahrerueckwaerts()
+   { if (energy >=2) {
+        int posX = getX();
+        int posY = getY();
+
+        if(huegelVorhanden("vorne"))
+        {
+            nachricht("Es geht nicht weiter!! ");
+        }
+        else if(getRotation()==270 && getY()==1)
+        {
+            nachricht("Ich kann mich nicht bewegen.");
+        }
+        else
+        {
+            move(-1);
+         Anzahl_an_gefahrenden_Feldern++;
+           /* System.out.println("Bewegung hat stattgefunden.");
+            System.out.println("X Position: "+posX);
+            System.out.println("Y Position: " +posY);
+            System.out.println("Anzahl an gefahrenen Feldern " + Anzahl_an_gefahrenden_Feldern);*/
+            Greenfoot.delay(1);
+            energy--;
+        if(energy <= 10) {
+                nachricht("Low battery power");
+            }   
+        }   
+
+        if(posX==getX()&&posY==getY()&&!huegelVorhanden("vorne"))
+        {
+            nachricht("Ich kann mich nicht bewegen");
+        }
+    }
+    else
+    {nachricht("No action due to unsufficient battery power!");
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
